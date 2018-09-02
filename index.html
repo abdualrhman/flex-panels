@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!--<link rel="stylesheet"  href="layout.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <title></title>
+  </head>
+  <style>
+
+    .container{
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      margin: 0px;
+    }
+    .img-item {
+      transition:
+       font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+       flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+       background 0.2s;
+      flex:1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .img-item :first-child{transform: translateY(-100%);}
+    .img-item.open-active :first-child{transform: translateY(0);}
+    .img-item :last-child{transform: translateY(100%);}
+    .img-item.open-active  :last-child{transform: translateY(0);}
+
+    .img-item.open {
+      flex:3;
+      font-size: 30px;
+    }
+
+    .img-txt{
+      transition:transform 0.5s;
+      display: flex;
+      color:#fff;
+      flex-direction: column;
+      justify-content: center;
+      font-family: 'Gloria Hallelujah', cursive;
+      text-shadow: 1px 1px 1px black;
+      flex:1 0 auto;
+      text-align: center;
+    }
+    .img-item-1{
+      background-image:url(https://images.unsplash.com/photo-1535565569462-c92c207661fa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=384354da4e0413d5a8ec07ca72222434&auto=format&fit=crop&w=634&q=80);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .img-item-2{
+      background-image:url(https://images.unsplash.com/photo-1535546204504-586398ee6677?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7320b162b147a94d4c41377d9035e665&auto=format&fit=crop&w=925&q=80);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .img-item-3{
+      background-image:url(https://images.unsplash.com/photo-1535515505622-7621ebc4fc58?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0e9ad1c57a31b2bc50d57b4f7abf985&auto=format&fit=crop&w=634&q=80);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .img-item-4{
+      background-image:url(https://images.unsplash.com/photo-1471724603960-98bc193c621d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ab1d5a218547b600255e10a75450f226&auto=format&fit=crop&w=500&q=60);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+  <body>
+      <div class="container">
+        <div class="img-item img-item-1">
+          <p class="img-txt">do</p>
+          <p class="img-txt">it</p>
+          <p class="img-txt">today</p>
+        </div>
+        <div class="img-item img-item-2">
+          <p class="img-txt">do</p>
+          <p class="img-txt">it</p>
+          <p class="img-txt">today</p>
+        </div>
+        <div class="img-item img-item-3">
+          <p class="img-txt">do</p>
+          <p class="img-txt">it</p>
+          <p class="img-txt">today</p>
+        </div>
+        <div class="img-item img-item-4">
+          <p class="img-txt">do</p>
+          <p class="img-txt">it</p>
+          <p class="img-txt">today</p>
+        </div>
+      </div>
+  </body>
+  <script>
+    const panel = document.querySelectorAll('.img-item');
+    function func(e){
+      this.classList.toggle("open")
+      this.classList.toggle("open-active");
+      console.log(this.classList)
+    }
+    function func2(){
+      this.classList.remove("open")
+      this.classList.remove("open-active")
+
+    }
+    console.log(panel)
+    panel.forEach((item)=>{item.addEventListener("mouseover", func)})
+    panel.forEach((item)=>{item.addEventListener("mouseout", func2)})
+
+  </script>
+</html>
